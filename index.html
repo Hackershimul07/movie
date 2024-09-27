@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom HTML5 Video Player</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Video Player</h1>
-  <div class="video-wrapper">
-    <div class="video-container" id="video-container">
-      <video controls id="video" preload="metadata" poster="">
-        <source src="https://futurazara.6gvv84i0qz.workers.dev/0:/female%204%20otttbangkla.lol.mkv" type="video/mp4">
-      </video>
-  
-      <div class="play-button-wrapper">
-        <div title="Play video" class="play-gif" id="circle-play-b">
-          <!-- SVG Play Button -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
-            <path d="M40 0a40 40 0 1040 40A40 40 0 0040 0zM26 61.56V18.44L64 40z" />
+  <div class="video-container paused" data-volume-level="high">
+    <img class="thumbnail-img">
+    <div class="video-controls-container">
+      <div class="timeline-container">
+        <div class="timeline">
+          <img class="preview-img">
+          <div class="thumb-indicator"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="play-pause-btn">
+          <svg class="play-icon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
           </svg>
+          <svg class="pause-icon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+          </svg>
+        </button>
+        <div class="volume-container">
+          <button class="mute-btn">
             <svg class="volume-high-icon" viewBox="0 0 24 24">
               <path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
             </svg>
@@ -65,10 +74,12 @@
           <svg class="close" viewBox="0 0 24 24">
             <path fill="currentColor" d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
           </svg>
-        </div>
+        </button>
       </div>
     </div>
+    <video src="https://futurazara.6gvv84i0qz.workers.dev/0:/female%204%20otttbangkla.lol.mkv">
+      <track kind="captions" srclang="en" src="assets/subtitles.vtt">
+    </video>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
